@@ -14,57 +14,57 @@
 
 
 /// <summary>
-/// ÏßĞÔ±í²Ù×÷£º
-/// ³õÊ¼»¯²Ù×÷£¬ÏÈ¶¨ÒåÒ»¸öÊı×é£¬½«Êı×éµÄÄ©Î²end±ê¼ÇÎª-1
-/// insert:²åÈëÔªËØ£¬²¢Ê¹µÃ¸ÃÔªËØÓÒ±ßµÄËùÓĞÔªËØ¶¼ÏòÓÒÒÆ¶¯Ò»¸ñ
-///remove:É¾³ıÔªËØ£¬²¢Ê¹µÃ¸ÃÔªËØÓÒ±ßµÄËùÓĞÔªËØ¶¼Ïò×óÒÆ¶¯Ò»¸ñ
-/// count:¼ÇÂ¼ÔªËØµÄ¸öÊı£¬ÓĞ¶àÉÙ¸öÔªËØ¾ÍÓĞ¶àÉÙ¸ö¸öÊı
-/// add:µ±ÔªËØ¸öÊı²»¹»µÄÊ±ºò£¬½«Êı×éÀ©ÈİÖÁÔ­À´µÄÁ½±¶²¢ÇÒ¸´ÖÆÔ­ÓĞÊı×éÖĞµÄÔªËØ£¬²¢ÇÒ½«Ô­Êı×éµÄÄÚ´æÊÍ·Å
+/// çº¿æ€§è¡¨æ“ä½œï¼š
+/// åˆå§‹åŒ–æ“ä½œï¼Œå…ˆå®šä¹‰ä¸€ä¸ªæ•°ç»„ï¼Œå°†æ•°ç»„çš„æœ«å°¾endæ ‡è®°ä¸º-1
+/// insert:æ’å…¥å…ƒç´ ï¼Œå¹¶ä½¿å¾—è¯¥å…ƒç´ å³è¾¹çš„æ‰€æœ‰å…ƒç´ éƒ½å‘å³ç§»åŠ¨ä¸€æ ¼
+///remove:åˆ é™¤å…ƒç´ ï¼Œå¹¶ä½¿å¾—è¯¥å…ƒç´ å³è¾¹çš„æ‰€æœ‰å…ƒç´ éƒ½å‘å·¦ç§»åŠ¨ä¸€æ ¼
+/// count:è®°å½•å…ƒç´ çš„ä¸ªæ•°ï¼Œæœ‰å¤šå°‘ä¸ªå…ƒç´ å°±æœ‰å¤šå°‘ä¸ªä¸ªæ•°
+/// add:å½“å…ƒç´ ä¸ªæ•°ä¸å¤Ÿçš„æ—¶å€™ï¼Œå°†æ•°ç»„æ‰©å®¹è‡³åŸæ¥çš„ä¸¤å€å¹¶ä¸”å¤åˆ¶åŸæœ‰æ•°ç»„ä¸­çš„å…ƒç´ ï¼Œå¹¶ä¸”å°†åŸæ•°ç»„çš„å†…å­˜é‡Šæ”¾
 /// 
 /// </summary>
 
 /*void testSeq() {
 	ElemType temp;
 	ElemType elemArray[10];
-	// ÉùÃ÷Ë³Ğò±í 
+	// å£°æ˜é¡ºåºè¡¨ 
 	SeqList seqList;
-	// ³õÊ¼»¯Ë³Ğò±í
+	// åˆå§‹åŒ–é¡ºåºè¡¨
 	initSeqList(&seqList);
-	// ¹¹ÔìÊı×éÔªËØ
-// ¹¹ÔìÊı×éÔªËØ
-	elemArray[0].name = _strdup("ÕÅÈı");
+	// æ„é€ æ•°ç»„å…ƒç´ 
+// æ„é€ æ•°ç»„å…ƒç´ 
+	elemArray[0].name = _strdup("å¼ ä¸‰");
 	elemArray[0].age = 13;
-	elemArray[1].name = _strdup("ÀîËÄ");
+	elemArray[1].name = _strdup("æå››");
 	elemArray[1].age = 14;
-	elemArray[2].name = _strdup("ÍõÎå");
+	elemArray[2].name = _strdup("ç‹äº”");
 	elemArray[2].age = 15;
 
-	//ÎªË³Ğò±íÔö¼ÓÒ»Ğ©Öµ
-	printf("[##############ÔÚË³Ğò±íµÄ0,1,2Î»ÖÃ²åÈëÔªËØ##############]\n");
+	//ä¸ºé¡ºåºè¡¨å¢åŠ ä¸€äº›å€¼
+	printf("[##############åœ¨é¡ºåºè¡¨çš„0,1,2ä½ç½®æ’å…¥å…ƒç´ ##############]\n");
 	insertElem(&seqList, 0, elemArray[0]);
 	insertElem(&seqList, 1, elemArray[1]);
 	insertElem(&seqList, 2, elemArray[2]);
 	printfSeqList(&seqList);
-	printf("µ±Ç°Ë³Ğò±í³¤¶ÈÎª:%d\n", length(&seqList));
-	//É¾
-	printf("[###################É¾³ıindex=1ÔªËØ###################]\n");
+	printf("å½“å‰é¡ºåºè¡¨é•¿åº¦ä¸º:%d\n", length(&seqList));
+	//åˆ 
+	printf("[###################åˆ é™¤index=1å…ƒç´ ###################]\n");
 	deleteElem(&seqList, 1, &temp);
-	printf("É¾³ıµÄÔªËØÎª£º\n");
+	printf("åˆ é™¤çš„å…ƒç´ ä¸ºï¼š\n");
 	printElem(temp);
-	printf("Ë³Ğò±íÔªËØÎª£º\n");
+	printf("é¡ºåºè¡¨å…ƒç´ ä¸ºï¼š\n");
 	printfSeqList(&seqList);
-	//¸Ä
-	printf("[###################¸ü¸Äindex=0ÔªËØ###################]\n");
-	temp.name = _strdup("Ë§Ë§");
+	//æ”¹
+	printf("[###################æ›´æ”¹index=0å…ƒç´ ###################]\n");
+	temp.name = _strdup("å¸…å¸…");
 	temp.age = 20;
 	updateElem(&seqList, 0, temp);
-	printf("Ë³Ğò±íÔªËØÎª£º\n");
+	printf("é¡ºåºè¡¨å…ƒç´ ä¸ºï¼š\n");
 	printfSeqList(&seqList);
-	//²é
-	printf("[###################²é¿´index=1ÔªËØ###################]\n");
+	//æŸ¥
+	printf("[###################æŸ¥çœ‹index=1å…ƒç´ ###################]\n");
 	selectElem(&seqList, 1, &temp);
 	printElem(temp);
-	//Ïú»ÙË³Ğò±í
+	//é”€æ¯é¡ºåºè¡¨
 	destroySeqList(&seqList);
 }
 */
@@ -259,14 +259,14 @@ void testReverseWithStack_Array() {
 	char c[51];
 	cout << "Please enter a string" << endl;
 	cin >> c;
-	reverseByStack(c, strlen(c));//Êµ¼ÊÉÏ×îÓÅ½âÓ¦¸ÃÊÇÓÃË«Ö¸ÕëÊµÏÖ·´×ª£¬¿Õ¼ä¸´ÔÓ¶È¸üµÍ£¬²»ĞèÒªÓÃµ½Õ»¶îÍâ¿Õ¼ä
+	reverseByStack(c, strlen(c));//å®é™…ä¸Šæœ€ä¼˜è§£åº”è¯¥æ˜¯ç”¨åŒæŒ‡é’ˆå®ç°åè½¬ï¼Œç©ºé—´å¤æ‚åº¦æ›´ä½ï¼Œä¸éœ€è¦ç”¨åˆ°æ ˆé¢å¤–ç©ºé—´
 }
 
 void testReverseWithStack_List() {
 	char c[51];
 	cout << "Please enter a string" << endl;
 	cin >> c;
-	reverseByStack(c, strlen(c));//Êµ¼ÊÉÏ×îÓÅ½âÓ¦¸ÃÊÇÓÃË«Ö¸ÕëÊµÏÖ·´×ª£¬¿Õ¼ä¸´ÔÓ¶È¸üµÍ£¬²»ĞèÒªÓÃµ½Õ»¶îÍâ¿Õ¼ä
+	reverseByStack(c, strlen(c));//å®é™…ä¸Šæœ€ä¼˜è§£åº”è¯¥æ˜¯ç”¨åŒæŒ‡é’ˆå®ç°åè½¬ï¼Œç©ºé—´å¤æ‚åº¦æ›´ä½ï¼Œä¸éœ€è¦ç”¨åˆ°æ ˆé¢å¤–ç©ºé—´
 }
 */
 
@@ -528,6 +528,26 @@ void testBinarySearchTree() {
 }
 */
 
+void testString_match() {
+	string mainstr = "GoogleGooseGood";
+	string substr="Good";
+	strpattern pattern;
+	int pos=pattern.bf(mainstr,substr);
+	cout << "pos=" << pos << endl;
+	pos=pattern.kmp(mainstr, substr);
+	cout << "pos=" << pos << endl;
+
+}
+
+void testQsort() {
+	Quick_Sort<int> a;
+	vector<int>data = { 1,1521,15564,3231,845,2321,4561,5164,1,234,56123,156,23056,451,54,5615,15645,61231,32,123,156,452,130564,1,2 };
+	vector<int>ans=a.quickSort(data);
+	for (auto& i : ans) {
+		cout << i << " ";
+	}
+	
+}
 int main() { 
 	//testSeq();
 	//testLinked_List();
